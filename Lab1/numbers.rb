@@ -45,5 +45,20 @@ def pr_numbers(number)
 puts pr
 end
 
+  def top_prime(n) 
+      max = n
+      lower = 2
+
+      while lower < max
+         while max % lower == 0 && max != lower
+           max = max / lower
+         end
+      lower = lower+1
+      end
+      max
+      puts max
+    end
+
 number = ARGV[0].to_i.abs
-pr_numbers(number)
+#pr_numbers(number)
+#top_prime(number)
