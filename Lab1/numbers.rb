@@ -59,6 +59,16 @@ end
       puts max
     end
 
+def pr_numbersne5(number)
+  pr=1
+  while number != 0
+    pr*= number % 10 if number % 10 !=5
+    number /= 10
+  end
+puts pr
+end
+
 number = ARGV[0].to_i.abs
 #pr_numbers(number)
 #top_prime(number)
+#pr_numbersne5(number)
