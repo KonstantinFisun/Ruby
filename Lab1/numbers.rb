@@ -76,7 +76,7 @@ def pr_numbers(number)
     pr*= number % 10
     number /= 10
   end
-puts pr
+return pr
 end 
 def gcd(a, b)
   if a % b == 0
@@ -94,14 +94,14 @@ one_number = gets.chomp.to_i
   arr<<i if one_number%i == 0
 end
 puts "Произведение цифр числа"
-pr_numbers(one_number)
+puts pr_numbers(one_number)
 puts"Массив делителей числа"
 print arr
 
 puts "\nПромежуточный результат "
 arr.each { |x| x%2!=0 and (x.prime?)==false and res<<x and puts x}
 puts"Ответ"
-puts gcd(one_number,res.max)
+puts gcd(pr_numbers(one_number),res.max)
 
 #number = ARGV[0].to_i.abs
 #pr_numbers(number)
