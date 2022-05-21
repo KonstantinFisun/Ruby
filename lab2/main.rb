@@ -16,12 +16,19 @@
     end
   end
   post
+end
+
+def departments_info(departments)
+  departments.each{|x| puts(x)}
+end
 
   def main
-list = read_from_txt("Department.txt")
+  list = read_from_txt("Department.txt")
+  dep_info(list)
+end
 
 if __FILE__ == $0
     main
 end
-end
+
 
