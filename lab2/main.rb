@@ -18,8 +18,8 @@
   post
 end
 
-def departments_info(departments)
-  departments.each{|x| puts(x)}
+def dep_info(departments)
+ list.each{|x| f.puts("#{x.name};#{x.phone};#{x.duty_write_txt}")}
 end
 
   def post_in_file
@@ -37,6 +37,9 @@ end
   def main
   list = read_from_txt("Department.txt")
   dep_info(list)
+     list.push(Department.new("Максим", "89659420158", "SMM специалист"))
+
+  write_to_txt("Department.txt", list)
 end
 
 if __FILE__ == $0
