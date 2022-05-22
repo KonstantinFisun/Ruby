@@ -22,6 +22,18 @@ def departments_info(departments)
   departments.each{|x| puts(x)}
 end
 
+  def post_in_file
+    "\"" + @post.join("\", \"") + "\""
+  end
+
+def write_to_txt(file, post)
+  File.open(file,"w") do |f|
+    post.each do |x|
+      f.puts "\"#{x.name}\", #{x.phone}, (#{x.post_in_file})"
+    end
+  end
+end
+
   def main
   list = read_from_txt("Department.txt")
   dep_info(list)
