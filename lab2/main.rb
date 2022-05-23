@@ -37,6 +37,7 @@ def write_to_txt(file, post)
     end
   end
 end
+
 def write_to_yaml(file, list_)
   File.open(file,"w") do |f|
     f.puts YAML.dump(list_)
@@ -56,7 +57,7 @@ end
   def main
   list_ = read_from_txt("Department.txt")
     list_ = read_from_YAML("Dep_write.yaml")
-  departments = Department_list.new(list_departments)
+  departments = Department_list.new(list_)
   print(departments.departments[0])
      
 end
