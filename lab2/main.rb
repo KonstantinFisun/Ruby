@@ -1,4 +1,7 @@
-
+path = File.dirname(__FILE__) # Получили путь к папке
+require "#{path}/Department.rb"
+require "yaml"
+require "yaml/store"
   reg_name = /^"[\w| |,|.]+/
   reg_phone = /8\-?([0-9]{3})\-?([ .-]?)([0-9]{3})\2([0-9]{4})/
   reg_post = /\(["[\w| |,|.|']+"]*\)$/
@@ -18,8 +21,8 @@
   post
 end
 
-def dep_info(departments)
- list.each{|x| f.puts("#{x.name};#{x.phone};#{x.duty_write_txt}")}
+def dep_info(list_)
+  list_.each{|x| puts(x)}
 end
 
   def post_in_file
@@ -27,19 +30,23 @@ end
   end
 
 def write_to_txt(file, post)
-  File.open(file,"w") do |f|
+  File.open(file, "w") do |f|
     post.each do |x|
       f.puts "\"#{x.name}\", #{x.phone}, (#{x.post_in_file})"
     end
   end
 end
+def write_to_yaml(file, list_)
+  File.open(file,"w") do |f|
+    f.puts YAML.dump(list_)
+  end
 
   def main
-  list = read_from_txt("Department.txt")
+  list_ = read_from_txt("Department.txt")
   dep_info(list)
-     list.push(Department.new("Максим", "89659420158", "SMM специалист"))
+     list_.push(Department.new("Максим", "89659420158", "SMM специалист"))
 
-  write_to_txt("Department.txt", list)
+  write_to_txt("Department.txt", list_)
 end
 
 if __FILE__ == $0
