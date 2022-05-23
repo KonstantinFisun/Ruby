@@ -1,5 +1,6 @@
-path = File.dirname(__FILE__) # Получили путь к папке
+path = File.dirname(__FILE__) 
 require "#{path}/Department.rb"
+require "#{path}/Department_list.rb"
 require "yaml"
 require "yaml/store"
   reg_name = /^"[\w| |,|.]+/
@@ -55,11 +56,8 @@ end
   def main
   list_ = read_from_txt("Department.txt")
     list_ = read_from_YAML("Dep_write.yaml")
-    write_to_yaml("Dep_write.yaml", list_)
-  dep_info(list)
-     list_.push(Department.new("Максим", "89659420158", "SMM специалист"))
-     
-  write_to_txt("Department.txt", list_)
+  departments = Department_list.new(list_departments)
+  print(departments.departments[0])
      
 end
 
