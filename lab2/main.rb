@@ -1,6 +1,7 @@
 path = File.dirname(__FILE__) 
 require "#{path}/Department.rb"
 require "#{path}/Department_list.rb"
+require "#{path}/Post.rb"
 require "yaml"
 require "yaml/store"
   reg_name = /^"[\w| |,|.]+/
