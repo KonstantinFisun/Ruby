@@ -41,12 +41,26 @@ def write_to_yaml(file, list_)
     f.puts YAML.dump(list_)
   end
 
+  def read_from_YAML(file)
+  store = YAML::Store.new file
+  list_ = ""
+  File.open(file, 'r') do |f|
+    while (line = f.gets)
+      list_ += line
+    end
+  end
+  store.load(list_)
+end
+
   def main
   list_ = read_from_txt("Department.txt")
+    list_ = read_from_YAML("Dep_write.yaml")
+    write_to_yaml("Dep_write.yaml", list_)
   dep_info(list)
      list_.push(Department.new("Максим", "89659420158", "SMM специалист"))
-
+     
   write_to_txt("Department.txt", list_)
+     
 end
 
 if __FILE__ == $0
