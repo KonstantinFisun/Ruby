@@ -49,7 +49,7 @@ def initialize(list_)
       component[2].split(',').each{|x| d.duty_add(x)} # Добавили обязанности
     end
     file.close()
-    @departments = list_
+    new(list_departments)
   end
 
  
@@ -59,7 +59,10 @@ def initialize(list_)
     end
   end
 
- 
+   def sort_by!
+    @departments.sort_by!{|a| a.name}
+  end
+      
  def Department_list.read_from_yaml(file)
     store = YAML::Store.new file
     list_departments = ""
@@ -69,7 +72,7 @@ def initialize(list_)
       end
     end
     store.load(list_)
-    @departments = list_
+    new(list_departments)
   end
 
  
@@ -79,14 +82,14 @@ def initialize(list_)
     end
 
 
-  def Department_list.deserialize_yaml(file)
+  def Department_list.initialize_yaml(file)
     @index = -1
-    @dep_list = Department_list.read_from_yaml(file)
+    @departments = Department_list.read_from_yaml(file)
   end
 
-  def Department_list.deserialize_txt(file)
+   def Department_list.initialize_txt(file)
     @index = -1
-    @dep_list = Department_list.read_from_txt(file)
+    @departments = Department_list.read_from_txt(file)
   end
  end
 end
