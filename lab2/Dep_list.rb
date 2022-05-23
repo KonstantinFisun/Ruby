@@ -40,7 +40,7 @@ def initialize(list_)
     s
   end
       
-       def read_from_txt(file)
+  def Department_list.read_from_txt(file)
     file = File.new(file, "r")
     list_ = [] 
     for line in file.readlines
@@ -53,14 +53,14 @@ def initialize(list_)
   end
 
  
-  def write_to_txt(file)
+  def Department_list.write_to_txt(file)
     File.open(file, "w") do |f|
       @departments.each{|x| f.puts("#{x.name};#{x.phone};#{x.duty_write_txt}")}
     end
   end
 
  
-  def read_from_YAML(file)
+ def Department_list.read_from_yaml(file)
     store = YAML::Store.new file
     list_departments = ""
     File.open(file, 'r') do |f|
@@ -73,9 +73,20 @@ def initialize(list_)
   end
 
  
-  def write_to_yaml(file)
+  def Department_list.write_to_yaml(file)
     File.open(file,"w") do |f|
       f.puts YAML.dump(@departments)
     end
+
+
+  def Department_list.deserialize_yaml(file)
+    @index = -1
+    @dep_list = Department_list.read_from_yaml(file)
   end
+
+  def Department_list.deserialize_txt(file)
+    @index = -1
+    @dep_list = Department_list.read_from_txt(file)
+  end
+ end
 end
