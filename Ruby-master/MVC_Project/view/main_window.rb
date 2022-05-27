@@ -59,6 +59,10 @@ class Main_window < FXMainWindow
     FXButton.new(frame,"Ok",nil,form,FXDialogBox::ID_ACCEPT,FRAME_RAISED|FRAME_THICK|LAYOUT_SIDE_LEFT|LAYOUT_CENTER_Y)
   
     if form.execute !=0 then
+       #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+       # Обращается к контроллеру
+       Controller.delete()
+       #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       @table.removeRows(@table.currentRow)
     end
   end
