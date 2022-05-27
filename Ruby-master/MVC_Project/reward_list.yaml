@@ -1,0 +1,10 @@
+--- !ruby/object:Reward_list
+reward_list:
+  - !ruby/object:Reward
+  name: 89653574125
+- !ruby/object:Reward
+  name: 89475896621
+- !ruby/object:Reward
+  name: 89649588877
+
+

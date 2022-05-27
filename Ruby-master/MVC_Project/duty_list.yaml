@@ -1,0 +1,63 @@
+--- !ruby/object:Duty_list
+duty_list:
+- !ruby/object:Duty
+  name: Турдакова
+  number: Юлия
+  days: Дмитриевна
+  reward_list: !ruby/object:Reward_list
+    reward_list:
+    - !ruby/object:Reward
+       name: 89653574125
+       col: 3
+    - !ruby/object:Reward
+      name: 89475896621
+      col: 2
+    - !ruby/object:Reward
+      name: 89649588877
+      col: 1
+- !ruby/object:Duty
+  name: Антонюк 
+  number: Виктория
+  days: Дмитриевна
+  reward_list: !ruby/object:Reward_list
+    reward_list:
+    - !ruby/object:Reward
+       name: 89653574125
+       col: 3
+    - !ruby/object:Reward
+      name: 89475896621
+      col: 2
+    - !ruby/object:Reward
+      name: 89649588877
+      col: 1
+- !ruby/object:Duty
+  name: Игнатьева
+  number: Мария
+  days: Александровна
+  reward_list: !ruby/object:Reward_list
+    reward_list:
+    - !ruby/object:Reward
+       name: 89653574125
+       col: 3
+    - !ruby/object:Reward
+      name: 89475896621
+      col: 2
+    - !ruby/object:Reward
+      name: 89649588877
+      col: 1
+- !ruby/object:Duty
+  name: Турдакова
+  number: Олеся
+  days: Дмитриевна
+  reward_list: !ruby/object:Reward_list
+    reward_list:
+    - !ruby/object:Reward
+       name: 89653574125
+       col: 3
+    - !ruby/object:Reward
+      name: 89475896621
+      col: 2
+    - !ruby/object:Reward
+      name: 89649588877
+      col: 1
+
